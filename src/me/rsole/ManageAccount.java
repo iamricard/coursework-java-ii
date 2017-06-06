@@ -14,10 +14,10 @@ public class ManageAccount {
     System.out.println(accounts.get(0).getBalance());
 
     try {
-      accounts.get(1).withdraw(400);
+      accounts.get(1).withdraw(10000);
       System.out.println(accounts.get(1).getBalance());
-    } catch (Account.InsufficientFundsError e) {
-      System.out.println("Not enough funds on account " + accounts.get(1).getAccountNumber());
+    } catch (Account.InsufficientFundsException e) {
+      System.out.println(e.getMessage());
     }
 
     accounts.get(0).deposit(75);
@@ -34,23 +34,30 @@ public class ManageAccount {
 
     for (Account a : accounts) {
       a.addInterest(.015);
-      System.out.println("Added 1.5% interest to account #" + a.getAccountNumber());
+      System.out.println(
+        "Added 1.5% interest to account #" + a.getAccountNumber()
+      );
       System.out.println("New balance is: " + a.getBalance());
     }
 
     inlandRevenue.addInterest(.015);
-    System.out.println("Added 1.5% interest to account #" + inlandRevenue.getAccountNumber());
-    System.out.println("New balance is: " + inlandRevenue.getBalance() + "\n");
+    System.out.println(
+      "Added 1.5% interest to account #" + inlandRevenue.getAccountNumber()
+    );
+    System.out.println("New balance is: " + inlandRevenue.getBalance());
 
     for (Account a : accounts) {
-      System.out.println("Account # " + a.getAccountNumber() + " was created on " + a.getOpeningDate());
+      System.out.format(
+        "Account # %d was created on %s.\n",
+        a.getAccountNumber(),
+        a.getOpeningDate()
+      );
     }
 
-    System.out.println(
-      "Account # " +
-        inlandRevenue.getAccountNumber() +
-        " was created on " +
-        inlandRevenue.getOpeningDate()
+    System.out.format(
+      "Account # %d was created on %s.\n",
+      inlandRevenue.getAccountNumber(),
+      inlandRevenue.getOpeningDate()
     );
   }
 
@@ -67,8 +74,11 @@ public class ManageAccount {
     for (Account a : accounts) {
       try {
         t += a.withdraw(a.getBalance() * .15);
-      } catch (Account.InsufficientFundsError e) {
-        System.out.println("Account # " + a.getAccountNumber() + " had insufficient funds to pay their taxes.");
+      } catch (Account.InsufficientFundsException e) {
+        System.out.format(
+          "Account # %d had insufficient funds to pay their taxes.\n",
+          a.getAccountNumber()
+        );
       }
     }
 

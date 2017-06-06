@@ -9,6 +9,7 @@ public class Account {
   private String name;
   private Date openingDate;
   private double maxOverdraft;
+  private String INSUFFICIENT_FUNDS_MSG = "Insufficient funds on account # %d";
 
   Account(String name, int accountNumber) {
     this(name, accountNumber, 0);
@@ -26,16 +27,18 @@ public class Account {
     balance += amount;
   }
 
-  double withdraw(double amount) {
+  double withdraw(double amount) throws InsufficientFundsException {
     return withdraw(amount, 0);
   }
 
-  double withdraw(double amount, double fee) {
+  double withdraw(double amount, double fee) throws InsufficientFundsException {
     double withdrawal = amount + fee;
     double newBalance = balance - withdrawal;
 
     if (newBalance < (0 - maxOverdraft)) {
-      throw new InsufficientFundsError();
+      throw new InsufficientFundsException(String.format(
+        INSUFFICIENT_FUNDS_MSG, accountNumber
+      ));
     }
 
     balance = newBalance;
@@ -71,11 +74,11 @@ public class Account {
     return (accountNumber + "\t" + name + "\t" + fmt.format(balance));
   }
 
-  class InsufficientFundsError extends Error {
-    InsufficientFundsError() {
+  class InsufficientFundsException extends Exception {
+    InsufficientFundsException() {
     }
 
-    InsufficientFundsError(String message) {
+    InsufficientFundsException(String message) {
       super(message);
     }
   }
