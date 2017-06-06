@@ -1,0 +1,11 @@
+---
+  author: "Ricard Solé Casas"
+  date: \today
+  title: "Java Coursework"
+  subtitle: "Part II"
+  toc: true
+  lang: "en"
+  papersize: "a4"
+  documentclass: "report"
+  geometry: margin=1in
+---
