@@ -1,11 +1,24 @@
 ---
   author: "Ricard Solé Casas"
+  institute:
+    - Google UK
+    - Ada National College for Digital Skills
   date: \today
-  title: "Java Coursework"
-  subtitle: "Part II"
+  title: "Java Coursework - Part II"
   toc: true
   lang: "en"
   papersize: "a4"
   documentclass: "report"
   geometry: margin=1in
+  subparagraph: yes
+  include-before:
+  - \section*{Declaration}
+  - I confirm that the submitted coursework is my own work and that all material
+    attributed to others (whether published or unpublished) has been clearly
+    identified and fully acknowledged and referred to original sources. I agree
+    that the College has the right to submit my work to the plagiarism detection
+    service. TurnitinUK for originality checks.
+  - \section*{Acknowledgements}
+  - I'd like to thank my wife and all of the folks who've helped learn what I
+    know now.
 ---
