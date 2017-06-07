@@ -12,6 +12,7 @@
   geometry: margin=1in
   subparagraph: yes
   include-before:
+  - \vfill
   - \section*{Declaration}
   - I confirm that the submitted coursework is my own work and that all material
     attributed to others (whether published or unpublished) has been clearly
@@ -19,6 +20,8 @@
     that the College has the right to submit my work to the plagiarism detection
     service. TurnitinUK for originality checks.
   - \section*{Acknowledgements}
-  - I'd like to thank my wife and all of the folks who've helped learn what I
-    know now.
+  - I'd like to thank my partner Shannon for her continued support and
+    challenges that help me grow, both professionally and personally. I would
+    also like to thank all of you who also helped me get here.
+  - \vfill
 ---
