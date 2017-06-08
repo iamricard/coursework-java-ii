@@ -1,0 +1,212 @@
+\documentclass[english,a4paper,]{report}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Programming - Part II},
+            pdfauthor={Ricard Solé Casas},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=english]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\fi
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{minted}
+\usemintedstyle{autumn}
+\newmintedfile{java}{linenos=true}
+
+\usepackage{fontspec}
+
+\setmonofont{Hasklig}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase,Ligatures=TeX}
+
+\title{Programming - Part II}
+\author{Ricard Solé Casas}
+\providecommand{\institute}[1]{}
+\institute{Google UK \and Ada National College for Digital Skills}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\vfill
+
+\section*{Declaration}
+
+I confirm that the submitted coursework is my own work and that all
+material attributed to others (whether published or unpublished) has
+been clearly identified and fully acknowledged and referred to original
+sources. I agree that the College has the right to submit my work to the
+plagiarism detection service. TurnitinUK for originality checks.
+
+\section*{Acknowledgements}
+
+I'd like to thank my partner Shannon for her continued support and
+challenges that help me grow, both professionally and personally. I
+would also like to thank all of you who also helped me get here.
+
+\vfill
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\chapter{Submission}\label{submission}
+
+\section{Synopsis}\label{synopsis}
+
+Hand-in document for the part 2 of the Programming Coursework at Ada
+College.
+
+\section{Exercises}\label{exercises}
+
+\subsection{Foreword}\label{foreword}
+
+The complete code implementations can be found on Appendix A.
+
+\subsection{Exercise I}\label{exercise-i}
+
+\textbf{Console output}
+
+\begin{verbatim}
+> 450.0
+> 100.0
+> 525.0
+> 20230715  Barack Obama    $525.00
+> 31558040  Bill Gates  $100.00
+> 44003050  Tom Cruise  $600.00
+\end{verbatim}
+
+\subsection{Exercise II}\label{exercise-ii}
+
+\textbf{Console output}
+
+\begin{verbatim}
+> Total in bank is: 1225.0
+\end{verbatim}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=28,lastline=28]{java}{code_samples/ManageAccount.java}
+
+\inputminted[firstline=62,lastline=67]{java}{code_samples/ManageAccount.java}
+
+\subsection{Exercise III}\label{exercise-iii}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=32,lastline=44]{java}{code_samples/Account.java}
+
+\subsection{Exercise II}\label{exercise-ii-1}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=28,lastline=30]{java}{code_samples/Account.java}
+
+\subsection{Exercise I}\label{exercise-i-1}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=69,lastline=84]{java}{code_samples/ManageAccount.java}
+
+\subsection{Exercise VI}\label{exercise-vi}
+
+\textbf{Code snippet}
+
+Constructor:
+\inputminted[firstline=12,lastline=14]{java}{code_samples/Account.java}
+
+Usage:
+\inputminted[firstline=30,lastline=30]{java}{code_samples/ManageAccount.java}
+
+\subsection{Exercise VII}\label{exercise-vii}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=31,lastline=31]{java}{code_samples/ManageAccount.java}
+
+\subsection{Exercise VIII}\label{exercise-viii}
+
+\textbf{Console output}
+
+\begin{verbatim}
+Added 1.5% interest to account #20230715
+New balance is: 669.375
+Added 1.5% interest to account #31558040
+New balance is: 127.49999999999999
+Added 1.5% interest to account #44003050
+New balance is: 765.0
+Added 1.5% interest to account #1
+New balance is: 275.625
+\end{verbatim}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=54,lastline=56]{java}{code_samples/Account.java}
+
+\subsection{Exercise II}\label{exercise-ii-2}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=16,lastline=22]{java}{code_samples/Account.java}
+
+\subsection{Exercise I}\label{exercise-i-2}
+
+\textbf{Code snippet}
+
+\inputminted[firstline=16,lastline=22]{java}{code_samples/Account.java}
+
+\inputminted[firstline=62,lastline=68]{java}{code_samples/Account.java}
+
+\chapter{Appendix A}\label{appendix-a}
+
+\section{Account.java}\label{account.java}
+
+\inputminted{java}{code_samples/Account.java}
+
+\section{ManageAccount.java}\label{manageaccount.java}
+
+\inputminted{java}{code_samples/ManageAccount.java}
+
+\end{document}

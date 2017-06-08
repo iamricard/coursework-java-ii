@@ -1,1 +1,1 @@
-Find report on `report/report.pdf`.
+`report.pdf` is the submission file.

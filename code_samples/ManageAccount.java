@@ -1,5 +1,3 @@
-package me.rsole;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class ManageAccount {
     System.out.println(accounts.get(0).getBalance());
 
     try {
-      accounts.get(1).withdraw(10000);
+      accounts.get(1).withdraw(400);
       System.out.println(accounts.get(1).getBalance());
     } catch (Account.InsufficientFundsException e) {
       System.out.println(e.getMessage());

@@ -1,5 +1,3 @@
-package me.rsole;
-
 import java.text.NumberFormat;
 import java.util.Date;
 
