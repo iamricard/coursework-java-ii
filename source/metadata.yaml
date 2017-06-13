@@ -11,6 +11,7 @@
   documentclass: "report"
   geometry: margin=1in
   subparagraph: yes
+  links-as-notes: true
   include-before:
   - \vfill
   - \section*{Declaration}

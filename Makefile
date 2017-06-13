@@ -3,9 +3,9 @@ OUT_FORMAT = latex
 IN_FORMAT = markdown
 HEADER = source/header.tex
 
-.PHONY: all clean
+.PHONY: all clean $(TARGET) pdf
 
-all: $(TARGET)
+all: $(TARGET) pdf
 
 $(TARGET): source/*.yaml source/*.md
 	pandoc \

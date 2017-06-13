@@ -36,6 +36,8 @@
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
 \fi
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
